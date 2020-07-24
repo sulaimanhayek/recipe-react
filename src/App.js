@@ -3,7 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Axios from 'axios'
 import { useState } from 'react';
-
+import {v4 as uuidv4} from 'uuid';
+import Recipe from './components/Recipe'
 
 function App() {
   const [query, setQuery] = useState("");
@@ -44,8 +45,8 @@ function App() {
       .map loops through the elements of the array and then we access them using the recipe key
 
       */}
-      {recipes !== [] && recipes.map(recipe =>
-        <h2>{recipe.recipe.label}</h2>)}
+      {recipes !== [] && recipes.map(recipe => 
+      <Recipe key={uuidv4()} recipe={recipe}/>)}
     </div>
     </div>
 
@@ -54,5 +55,3 @@ function App() {
 
 export default App;
 
-
-// TODO: get the recipe
