@@ -39,6 +39,11 @@ function App() {
       <input type="submit" value="search"></input>
     </form>
     <div className="recipes">
+      {/* 
+      first we check if the array is empty (no result ) then dont show anything
+      .map loops through the elements of the array and then we access them using the recipe key
+
+      */}
       {recipes !== [] && recipes.map(recipe =>
         <h2>{recipe.recipe.label}</h2>)}
     </div>
